@@ -1,4 +1,4 @@
-;;; alert-pstoast --- Alert style by PowerShell toast notification script  -*- lexical-binding: t -*-
+;;; alert-pstoast --- Alert style using PowerShell toast notification script  -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2017 Iku Iwasa
 
