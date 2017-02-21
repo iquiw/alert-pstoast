@@ -16,14 +16,18 @@
   (expand-file-name "toast.ps1" (file-name-directory load-file-name)))
 
 (defun alert-pstoast--xml (title message)
-  "Generate toast XML string with TITLE and MESSAGE."
+  "Generate toast XML string with TITLE and MESSAGE.
+TITLE can be omitted by specifying `nil'."
   (with-temp-buffer
     (xml-print
      `((toast nil
               (visual nil
-                      (binding ((template . "ToastText02"))
-                               (text ((id . "1")) ,title)
-                               (text ((id . "2")) ,message))))))
+                      ,(if title
+                           `(binding ((template . "ToastText02"))
+                                     (text ((id . "1")) ,title)
+                                     (text ((id . "2")) ,message))
+                         `(binding ((template . "ToastText01"))
+                                   (text ((id . "1")) ,message)))))))
     (buffer-string)))
 
 (defun alert-pstoast--run-script (xml)
