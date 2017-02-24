@@ -6,7 +6,7 @@
 
 (ert-deftest alert-pstoast-xml-generation-message-only ()
   "Test toast XML generation."
-  (should (string= (alert-pstoast--xml nil "message")
+  (should (string= (alert-pstoast--xml nil "message" nil)
                    "<toast>
   <visual>
     <binding template=\"ToastText01\">
@@ -15,12 +15,37 @@
   </visual>
 </toast>")))
 
-(ert-deftest alert-pstoast-xml-generation-title-and-message ()
+(ert-deftest alert-pstoast-xml-generation-title-message ()
   "Test toast XML generation."
-  (should (string= (alert-pstoast--xml "title" "message")
+  (should (string= (alert-pstoast--xml "title" "message" nil)
                    "<toast>
   <visual>
     <binding template=\"ToastText02\">
+      <text id=\"1\">title</text>
+      <text id=\"2\">message</text>
+    </binding>
+  </visual>
+</toast>")))
+
+(ert-deftest alert-pstoast-xml-generation-message-icon ()
+  "Test toast XML generation."
+  (should (string= (alert-pstoast--xml nil "message" "image")
+                   "<toast>
+  <visual>
+    <binding template=\"ToastImageAndText01\">
+      <image id=\"1\" src=\"image\"/>
+      <text id=\"1\">message</text>
+    </binding>
+  </visual>
+</toast>")))
+
+(ert-deftest alert-pstoast-xml-generation-title-message-icon ()
+  "Test toast XML generation."
+  (should (string= (alert-pstoast--xml "title" "message" "image")
+                   "<toast>
+  <visual>
+    <binding template=\"ToastImageAndText02\">
+      <image id=\"1\" src=\"image\"/>
       <text id=\"1\">title</text>
       <text id=\"2\">message</text>
     </binding>
