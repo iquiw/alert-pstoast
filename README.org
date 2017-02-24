@@ -1,0 +1,36 @@
+#+TITLE: Alert PSToast
+
+* About
+  Alert style using PowerShell toast notification script. Tested on Windows 10 only.
+
+* Setup
+
+** Depends
+   - [[https://github.com/jwiegley/alert][alert]]
+
+** Installation
+*** Install from Git
+    1. Clone the repository.
+       #+BEGIN_SRC sh
+       git clone https://github.com/iquiw/alert-pstoast.git
+       #+END_SRC
+    2. Add the location to =load-path=.
+       #+BEGIN_SRC emacs-lisp
+       (add-to-list 'load-path "/path/to/alert-pstoast")
+       #+END_SRC
+
+** Configuration
+   To use =alert-pstoast= as default style, configure the following.
+   #+BEGIN_SRC emacs-lisp
+   (with-eval-after-load 'alert
+     (require 'alert-pstoast)
+     (setq alert-default-style 'pstoast))
+   #+END_SRC
+
+   Or with [[https://github.com/jwiegley/use-package][use-package]],
+   #+BEGIN_SRC emacs-lisp
+   (use-package alert-pstoast
+     :after alert
+     :config
+     (setq alert-default-style 'pstoast))
+   #+END_SRC
