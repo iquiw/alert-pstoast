@@ -1,8 +1,10 @@
-;;; alert-pstoast --- Alert style using PowerShell toast notification script  -*- lexical-binding: t -*-
+;;; alert-pstoast.el --- Alert style using PowerShell toast notification script  -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2017 Iku Iwasa
 
-;; Version: 0.0.0
+;; Author:   Iku Iwasa <iku.iwasa@gmail.com>
+;; URL:      https://github.com/iquiw/alert-pstoast
+;; Version:  0.0.0
 ;; Keywords: notification
 ;; Package-Requires: ((emacs "25.1") (alert "1.2"))
 
