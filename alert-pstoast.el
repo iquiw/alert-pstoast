@@ -58,11 +58,10 @@ TITLE and ICON can be omitted by specifying `nil'."
     (process-send-eof process)))
 
 (defun alert-pstoast--sentinel (process status)
-  "Show PowerShell script PROCESS STATUS."
-  (message "pstoast: %s, %s, %s"
-           (process-status process)
-           (process-exit-status process)
-           status))
+  "Show PowerShell script PROCESS's STATUS for non successful finish."
+  (unless (and (eq (process-status process) 'exit)
+               (= (process-exit-status process) 0))
+    (message "alert-pstoast: %s" (replace-regexp-in-string "\n" "" status))))
 
 (defun alert-pstoast-notify (info)
   "Notify notification INFO by PowerShell script."
