@@ -1,11 +1,11 @@
-;;; alert-pstoast.el --- Alert style using PowerShell toast notification script  -*- lexical-binding: t -*-
+;;; alert-pstoast.el --- Alert style using PowerShell toast notification -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2017 Iku Iwasa
 
 ;; Author:   Iku Iwasa <iku.iwasa@gmail.com>
 ;; URL:      https://github.com/iquiw/alert-pstoast
 ;; Version:  0.0.0
-;; Keywords: notification
+;; Keywords: comm notification
 ;; Package-Requires: ((emacs "25.1") (alert "1.2"))
 
 ;;; Commentary:
@@ -30,7 +30,7 @@
 
 (defun alert-pstoast--xml (title message icon)
   "Generate toast XML string with TITLE and MESSAGE.
-TITLE and ICON can be omitted by specifying `nil'."
+TITLE and ICON can be omitted by specifying nil."
   (with-temp-buffer
     (let ((tmpl (if icon
                     (if title "ToastImageAndText02" "ToastImageAndText01")
