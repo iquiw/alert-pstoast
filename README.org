@@ -10,13 +10,13 @@ Alert style using PowerShell toast notification script. Tested on Windows 10 onl
 ** Installation
 *** Install from Git
 1. Clone the repository.
-#+BEGIN_SRC sh
-git clone https://github.com/iquiw/alert-pstoast.git
-#+END_SRC
+   #+BEGIN_SRC sh
+   git clone https://github.com/iquiw/alert-pstoast.git
+   #+END_SRC
 2. Add the location to =load-path=.
-#+BEGIN_SRC emacs-lisp
-(add-to-list 'load-path "/path/to/alert-pstoast")
-#+END_SRC
+   #+BEGIN_SRC emacs-lisp
+   (add-to-list 'load-path "/path/to/alert-pstoast")
+   #+END_SRC
 
 ** Configuration
 To use =alert-pstoast= as default style, configure the following.
