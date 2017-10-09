@@ -1,4 +1,6 @@
 * Alert PSToast
+[[https://travis-ci.org/iquiw/alert-pstoast][file:https://travis-ci.org/iquiw/alert-pstoast.svg?branch=master]]
+
 Alert style using PowerShell toast notification script. It does not require
 external dependency other than PowerShell.
 
