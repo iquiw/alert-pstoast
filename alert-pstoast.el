@@ -9,6 +9,20 @@
 ;; Package-Requires: ((emacs "25.1") (alert "1.2"))
 
 ;;; Commentary:
+
+;; Alert style using PowerShell toast notification script.
+
+;; To use `alert-pstoast' as default style, configure the following.
+;;
+;;     (setq alert-default-style 'pstoast)
+;;
+;; The following keywords are supported as argument of alert.
+;;
+;;  - :title   ::	Displayed as headline text.
+;;  - :message ::	Displayed as body text.
+;;  - :icon    ::	Displayed as icon image.  SVG is not supported.
+;;
+
 ;;; Code:
 
 (require 'alert)
