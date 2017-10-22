@@ -4,7 +4,7 @@
 
 ;; Author:   Iku Iwasa <iku.iwasa@gmail.com>
 ;; URL:      https://github.com/iquiw/alert-pstoast
-;; Version:  0.0.0
+;; Version:  0.1.0
 ;; Keywords: comm notification
 ;; Package-Requires: ((emacs "25.1") (alert "1.2"))
 
