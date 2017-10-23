@@ -76,6 +76,7 @@ TITLE and ICON can be omitted by specifying nil."
                (= (process-exit-status process) 0))
     (message "alert-pstoast: %s" (replace-regexp-in-string "\n" "" status))))
 
+;;;###autoload
 (defun alert-pstoast-notify (info)
   "Notify notification INFO by PowerShell script."
   (let ((xml (alert-pstoast--xml
