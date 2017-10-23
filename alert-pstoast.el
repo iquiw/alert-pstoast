@@ -49,8 +49,7 @@ TITLE and ICON can be omitted by specifying nil."
     (let ((tmpl (if icon
                     (if title "ToastImageAndText02" "ToastImageAndText01")
                   (if title "ToastText02" "ToastText01")))
-          (body `((text ((id . ,(if title "2" "1"))) ,message)))
-          (idx 1))
+          (body `((text ((id . ,(if title "2" "1"))) ,message))))
       (when title
         (push `(text ((id . "1")) ,title) body))
       (when icon
