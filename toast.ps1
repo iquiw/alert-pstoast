@@ -6,5 +6,7 @@ $xml.LoadXml([Console]::In.ReadToEnd())
 
 $toast = [Windows.UI.Notifications.ToastNotification]::new($xml)
 
-$notifier = [Windows.UI.Notifications.ToastNotificationManager]::CreateToastNotifier("emacs")
+$app = Get-StartApps -Name "Windows Powershell" | Select-Object -Index 0
+
+$notifier = [Windows.UI.Notifications.ToastNotificationManager]::CreateToastNotifier($app.AppID)
 $notifier.Show($toast);
