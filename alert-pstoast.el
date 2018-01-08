@@ -1,6 +1,6 @@
 ;;; alert-pstoast.el --- Alert style using PowerShell toast notification -*- lexical-binding: t -*-
 
-;; Copyright (C) 2017 Iku Iwasa
+;; Copyright (C) 2017-2018 Iku Iwasa
 
 ;; Author:   Iku Iwasa <iku.iwasa@gmail.com>
 ;; URL:      https://github.com/iquiw/alert-pstoast
