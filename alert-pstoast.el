@@ -32,6 +32,11 @@
   "Alert style using PowerShell toast notification"
   :group 'alert)
 
+(defcustom alert-pstoast-app-name nil
+  "App name to find AppID used for toast notification."
+  :type 'string
+  :group 'alert-pstoast)
+
 (defcustom alert-pstoast-default-icon
   (concat data-directory
           "images/icons/hicolor/48x48/apps/emacs.png")
@@ -62,9 +67,14 @@ TITLE and ICON can be omitted by specifying nil."
 
 (defun alert-pstoast--run-script (xml)
   "Run toast notification PowerShell script with XML input."
-  (let ((process (start-process "pstoast" "*alert-pstoast*" "powershell"
-                                "-ExecutionPolicy" "RemoteSigned"
-                                "-File" alert-pstoast-script-path)))
+  (let* ((args (if alert-pstoast-app-name
+                   (list "-args" "-Name" alert-pstoast-app-name)
+                 '()))
+         (process (apply #'start-process
+                         "pstoast" "*alert-pstoast*" "powershell"
+                         "-ExecutionPolicy" "RemoteSigned"
+                         "-File" alert-pstoast-script-path
+                         args)))
     (set-process-coding-system process locale-coding-system 'utf-8)
     (set-process-sentinel process 'alert-pstoast--sentinel)
     (process-send-string process xml)
