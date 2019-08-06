@@ -35,21 +35,18 @@
 (defcustom alert-pstoast-app-id nil
   "AppID to be used for toast notification.
 If this is non-nil, `alert-pstoast-app-name' is not used."
-  :type 'string
-  :group 'alert-pstoast)
+  :type 'string)
 
 (defcustom alert-pstoast-app-name nil
   "App name to find AppID used for toast notification.
 See `alert-pstoast-app-id' also."
-  :type 'string
-  :group 'alert-pstoast)
+  :type 'string)
 
 (defcustom alert-pstoast-default-icon
   (concat data-directory
           "images/icons/hicolor/48x48/apps/emacs.png")
   "Filename of default icon to show for pstoast-alerts."
-  :type 'string
-  :group 'alert-pstoast)
+  :type 'string)
 
 (defconst alert-pstoast-script-path
   (expand-file-name "toast.ps1" (file-name-directory load-file-name)))
