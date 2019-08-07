@@ -6,6 +6,8 @@ param(
 [Windows.Data.Xml.Dom.XmlDocument, Windows.Data.Xml.Dom, ContentType = WindowsRuntime] > $null
 [Windows.UI.Notifications.ToastNotificationManager, Windows.UI.Notifications, ContentType = WindowsRuntime] > $null
 
+[Console]::InputEncoding = [System.Text.Encoding]::UTF8
+
 $xml = New-Object Windows.Data.Xml.Dom.XmlDocument
 $xml.LoadXml([Console]::In.ReadToEnd())
 
