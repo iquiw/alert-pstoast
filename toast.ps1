@@ -14,13 +14,15 @@ $xml.LoadXml([Console]::In.ReadToEnd())
 $toast = [Windows.UI.Notifications.ToastNotification]::new($xml)
 
 if ($AppID.Length -eq 0) {
-    if ($Name.Length -gt 0) {
-        $app = Get-StartApps -Name $Name | Select-Object -Index 0
+    if ($Name.Length -eq 0) {
+        $Name = "Emacs"
     }
+    $app = Get-StartApps -Name $Name | Select-Object -Index 0
     if ($app -eq $null) {
-        $app = Get-StartApps -Name "Windows Powershell" | Select-Object -Index 0
+        $AppID = "Emacs"
+    } else {
+        $AppID = $app.AppID
     }
-    $AppID = $app.AppID
 }
 
 $notifier = [Windows.UI.Notifications.ToastNotificationManager]::CreateToastNotifier($AppID)
